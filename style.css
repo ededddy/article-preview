@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+:root {
+  --dark-gray-blue: hsl(217, 19%, 35%);
+  --de-dark-blue: hsl(214, 17%, 51%);
+  --gray-blue: hsl(212, 23%, 69%);
+  --lt-gray-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  width: 100vw;
+}
+html {
+  font-size: 13px;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--dark-gray-blue);
+  background-color: var(--lt-gray-blue);
+}
+.attribution {
+  font-size: 21px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 425px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 1.5rem;
+  background: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.card-img {
+  width: 100%;
+  overflow: hidden;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  background: url(./images/drawers.jpg);
+  background-position: left center;
+  background-size: cover;
+}
+
+.card-area {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+  padding: 0;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 1rem 1rem;
+  margin-top: 2rem;
+}
+
+.card-content {
+  font-weight: 500;
+  font-size: 1.45rem;
+  color: var(--gray-blue);
+  margin: 1rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 1rem;
+  align-items: center;
+}
+
+.name-tag {
+  display: flex;
+  align-items: flex-start;
+}
+.avatar,
+.avatar > img {
+  border-radius: 9999px;
+}
+
+.avatar > img {
+  height: 5rem;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.date {
+  color: var(--gray-blue);
+  font-size: 1.25rem;
+}
+
+.name-date {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.share {
+  border-radius: 9999px;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  background-color: var(--lt-gray-blue);
+  cursor: pointer;
+}
+.share > svg {
+  width: 70%;
+  height: 70%;
+  fill: var(--dark-gray-blue);
+}
+.share:focus {
+  background-color: var(--dark-gray-blue);
+}
+
+.share:focus > svg {
+  fill: var(--lt-gray-blue);
+}
+
+.share-dialog {
+  position: absolute;
+  left: 83%;
+  transform: translate(0%, -150%);
+  background-color: var(--dark-gray-blue);
+  color: var(--de-dark-blue);
+  border-radius: 1.5rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 200px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+}
+
+.share-end {
+  position: absolute;
+  top: 60%;
+  transform: rotate(-45deg);
+  fill: var(--dark-gray-blue);
+  height: 2rem;
+  width: 2rem;
+}
+
+.inner-share {
+  visibility: hidden;
+}
+.active {
+  visibility: visible !important;
+}
+
+@media only screen and (max-width: 400px) {
+  .attribution {
+    font-size: 9px;
+  }
+  .card {
+    flex-direction: column;
+    height: 95vh;
+    align-items: center;
+  }
+
+  .card-area {
+    margin: 1rem;
+    height: 0;
+  }
+  .card-img {
+    width: 100%;
+    height: 250px;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 0;
+    background-position: center top;
+    background-size: ;
+    background-repeat: no-repeat;
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .card-content {
+    font-size: 1.1rem;
+  }
+  .name {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+  .name-date {
+    margin-left: 1rem;
+  }
+  .avatar > img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .date {
+    font-size: 1.05rem;
+  }
+  .share {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+  }
+  .share-dialog {
+    width: 100%;
+    left: 0;
+    visibility: hidden;
+    padding: 1.75rem 0;
+    transform: translate(0, 0);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    justify-content: flex-start;
+  }
+  .share-dialog > span {
+    margin-left: 2rem;
+  }
+  .share-dialog > svg {
+    margin-left: 1.5rem;
+  }
+  .share {
+    z-index: 1000;
+    background-color: var(--de-dark-blue);
+  }
+  .share > svg {
+    fill: white;
+  }
+  .share-end {
+    visibility: hidden;
+  }
+}
